@@ -48,6 +48,16 @@ p {
   white-space: nowrap;
 }
 
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.lock-button {
+  background: #475569;
+}
+
 .form {
   background: #ffffff;
   border: 1px solid #d8dee8;
@@ -162,6 +172,10 @@ tr:last-child td {
   .header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
   }
 
   .form {

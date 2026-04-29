@@ -50,6 +50,14 @@ function App() {
     setIsUnlocked(true);
   }
 
+  function lockTable() {
+    setIsUnlocked(false);
+    setPassword('');
+    setJobs([]);
+    setError('');
+    setForm(emptyForm);
+  }
+
   async function loadJobs() {
     try {
       setLoading(true);
@@ -123,7 +131,14 @@ function App() {
           <h1>Job Status</h1>
           <p>Track applications and update recruiter progress in one simple table.</p>
         </div>
-        <span className="count">{jobs.length} jobs</span>
+        <div className="header-actions">
+          <span className="count">{jobs.length} jobs</span>
+          {isUnlocked && (
+            <button className="lock-button" type="button" onClick={lockTable}>
+              Lock
+            </button>
+          )}
+        </div>
       </section>
 
       <form className="password-form" onSubmit={unlockTable}>

@@ -5,13 +5,13 @@ import './styles.css';
 const emptyForm = {
   company: '',
   role: '',
-  status: 'Applied',
+  status: 'APPLIED',
   appliedDate: new Date().toISOString().slice(0, 10),
   recruiter: '',
   notes: '',
 };
 
-const statuses = ['Applied', 'Recruiter Call', 'Interview', 'Offer', 'Rejected', 'On Hold'];
+const statuses = ['APPLIED', 'SCREENING', 'INTERVIEW', 'OFFER', 'REJECTED', 'ON_HOLD'];
 
 function App() {
   const [jobs, setJobs] = useState([]);

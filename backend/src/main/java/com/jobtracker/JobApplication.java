@@ -20,7 +20,7 @@ public class JobApplication {
     @NotBlank
     private String role;
 
-    private String status = "Applied";
+    private String status = "APPLIED";
     private LocalDate appliedDate = LocalDate.now();
     private String recruiter;
     private String notes;

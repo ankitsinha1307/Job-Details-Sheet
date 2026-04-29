@@ -1,4 +1,4 @@
-# Job Tracker
+# Job Status
 
 Simple React + Spring Boot app to track jobs you applied for and update status as recruiters respond.
 

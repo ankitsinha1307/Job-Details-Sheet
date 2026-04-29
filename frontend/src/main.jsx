@@ -120,7 +120,7 @@ function App() {
     <main className="page">
       <section className="header">
         <div>
-          <h1>Job Tracker</h1>
+          <h1>Job Status</h1>
           <p>Track applications and update recruiter progress in one simple table.</p>
         </div>
         <span className="count">{jobs.length} jobs</span>

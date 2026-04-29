@@ -68,6 +68,7 @@ public class JobApplicationController {
                     job.setCompany(updatedJob.getCompany());
                     job.setRole(updatedJob.getRole());
                     job.setStatus(updatedJob.getStatus());
+                    job.setNumberOfApplications(updatedJob.getNumberOfApplications());
                     job.setAppliedDate(updatedJob.getAppliedDate());
                     job.setRecruiter(updatedJob.getRecruiter());
                     job.setNotes(updatedJob.getNotes());

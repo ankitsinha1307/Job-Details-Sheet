@@ -54,7 +54,7 @@ p {
   border-radius: 8px;
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(6, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(7, minmax(0, 1fr)) auto;
   padding: 16px;
 }
 
@@ -121,7 +121,7 @@ select:disabled {
 
 table {
   border-collapse: collapse;
-  min-width: 900px;
+  min-width: 1040px;
   width: 100%;
 }
 

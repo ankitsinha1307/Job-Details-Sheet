@@ -6,6 +6,7 @@ const emptyForm = {
   company: '',
   role: '',
   status: 'APPLIED',
+  numberOfApplications: 1,
   appliedDate: new Date().toISOString().slice(0, 10),
   recruiter: '',
   notes: '',
@@ -164,6 +165,14 @@ function App() {
           ))}
         </select>
         <input
+          type="number"
+          min="1"
+          value={form.numberOfApplications}
+          onChange={(event) => setForm({ ...form, numberOfApplications: Number(event.target.value) })}
+          placeholder="No of application"
+          disabled={!isUnlocked}
+        />
+        <input
           type="date"
           value={form.appliedDate}
           onChange={(event) => setForm({ ...form, appliedDate: event.target.value })}
@@ -193,6 +202,7 @@ function App() {
               <th>Company</th>
               <th>Role</th>
               <th>Status</th>
+              <th>No of application</th>
               <th>Applied</th>
               <th>Recruiter</th>
               <th>Notes</th>
@@ -202,15 +212,15 @@ function App() {
           <tbody>
             {!isUnlocked ? (
               <tr>
-                <td colSpan="7">Enter the password to view job details.</td>
+                <td colSpan="8">Enter the password to view job details.</td>
               </tr>
             ) : loading ? (
               <tr>
-                <td colSpan="7">Loading jobs...</td>
+                <td colSpan="8">Loading jobs...</td>
               </tr>
             ) : jobs.length === 0 ? (
               <tr>
-                <td colSpan="7">No jobs added yet.</td>
+                <td colSpan="8">No jobs added yet.</td>
               </tr>
             ) : (
               jobs.map((job) => (
@@ -223,6 +233,14 @@ function App() {
                         <option key={status}>{status}</option>
                       ))}
                     </select>
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      min="1"
+                      value={job.numberOfApplications || 1}
+                      onChange={(event) => updateJob(job, { numberOfApplications: Number(event.target.value) })}
+                    />
                   </td>
                   <td>{job.appliedDate}</td>
                   <td>{job.recruiter || '-'}</td>

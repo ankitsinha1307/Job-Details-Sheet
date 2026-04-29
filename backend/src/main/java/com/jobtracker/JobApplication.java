@@ -23,6 +23,7 @@ public class JobApplication {
     private String role;
 
     private String status = "APPLIED";
+    private Integer numberOfApplications = 1;
     private LocalDate appliedDate = LocalDate.now();
     private String recruiter;
     private String notes;
@@ -57,6 +58,14 @@ public class JobApplication {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getNumberOfApplications() {
+        return numberOfApplications;
+    }
+
+    public void setNumberOfApplications(Integer numberOfApplications) {
+        this.numberOfApplications = numberOfApplications;
     }
 
     public LocalDate getAppliedDate() {

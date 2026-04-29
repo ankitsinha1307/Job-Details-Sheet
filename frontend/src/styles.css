@@ -78,6 +78,13 @@ button {
   padding: 0 14px;
 }
 
+button:disabled,
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
 .delete {
   background: #dc2626;
 }
@@ -93,6 +100,23 @@ button {
   border-radius: 8px;
   margin-top: 20px;
   overflow-x: auto;
+}
+
+.password-form {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(220px, 360px) auto;
+  justify-content: start;
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+.locked {
+  opacity: 0.7;
 }
 
 table {
@@ -128,6 +152,10 @@ tr:last-child td {
   .form button {
     grid-column: span 2;
   }
+
+  .password-form {
+    grid-template-columns: 1fr auto;
+  }
 }
 
 @media (max-width: 640px) {
@@ -142,5 +170,9 @@ tr:last-child td {
 
   .form button {
     grid-column: auto;
+  }
+
+  .password-form {
+    grid-template-columns: 1fr;
   }
 }
